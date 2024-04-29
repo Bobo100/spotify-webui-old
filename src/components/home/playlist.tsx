@@ -27,7 +27,7 @@ export default function PlayList() {
                 }),
             });
             if (!response) return
-            const playlist = response.items.slice(0, 5)
+            const playlist = response.items.slice(0, 15)
             const result = processUtils.filterPlaylist(playlist)
             setPlaylist(result)
         }
@@ -47,7 +47,8 @@ export default function PlayList() {
         if (!response) return
         // 因為我有在api tracks設定spotify回傳的格式 
         // 所以他們已經整理好了
-        setTracks(response.items)
+        // setTracks(response.items)
+        console.log(response.items)
     }
 
     return (

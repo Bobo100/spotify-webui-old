@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     */
     
     // fields=tracks.items(track(name,href,album(name,href))). 
-    searchParams.append("fields", "items(track(name,href,album(name,href)))");
+    searchParams.append("fields", "items(track(name,href,album(name,images)))");
     const url = 'https://api.spotify.com/v1/playlists/' + playlist_id + '/tracks' + '?' + searchParams.toString();
     try {
         const spotifyResponse = await apiHttpsUtils.getWithToken({
